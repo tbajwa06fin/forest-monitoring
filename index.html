@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Forest Monitoring App</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- The div that contains the title and the 4 logos -->
+        <div style="border-style: solid; border-radius: 1px; height: 90px; overflow: hidden;" class="col-12">
+          <!-- Title with green background -->
+          <div id='green-one' class="col-6" style="height: 90px;">
+            <h2 style="color: white; margin-top: auto;">Portal for Restoration of habitats through Tree Plantation</h2> 
+          </div>
+            <!-- The 4 logos -->
+            <img src="images/Serena_Hotels_Logo.png" class='image col-1 imagesResize'>
+            <img src="images/WWF_Logo.png" class='image col-1 imagesResize'>
+            <img src="images/Aga-Khan-Foundation-logo.png" class='image col-1 imagesResize'>
+            <img src="images/nust-logo.png" class='image col-1 imagesResize' style="width: 80px;">
+        </div>
+
+        <!-- The div that contains the map, API key generated from developers.google. Associate billing account with project to remove watermark -->
+        <div id="map" class="col-11-9 mapContainer mapSize"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH6oo-SefqAtlYX2L1YnD0LJFWfsx2wv4&callback=initMap&libraries=&v=weekly" async></script>
+
+        <!-- The div that contains the buttons and anchors that lead to serena hotel's social media accounts -->
+        <div class="buttonDiv col-2-5" style="margin-top: 10%; margin-left: 0.5%;">
+            <!-- Displays the markers on the map -->
+            <button id='show-hide-markers' class="button">Plantation Sites</button>
+            <br>
+            <!-- Sets a state in which, when a marker is clicked, it displays that site's activity in the form of a slideshow -->
+            <button id="activity" class="button" disabled>Activity Data</button>
+            <br>
+            <!-- Sets a state in which, when a marker is clicked, it displays that site's forestation data in the form of a graph/table -->
+            <button id="tabular" class="button" disabled>Forestation Data</button>
+            <br>
+            <!-- When clicked, opens a new window with the appropriate social media account -->
+            <div class="footer">
+              <a href="https://www.facebook.com/SerenaHotelsOfficial/" target="_blank"><img src="images/BWFB.png" class="logos"></a>
+              <a href="https://www.instagram.com/serenahotelsofficial/?hl=en" target="_blank"><img src="images/instaBWW.png" style="height: 30px; margin-bottom: 9px;" class="logos"></a>
+              <a href="https://twitter.com/serena_hotels?lang=en" target="_blank"><img src="images/twitterBW.png" class="logos"></a>
+            </div>
+        </div>
+
+        <!-- This is the 'slides' div that contains the slideshow of a site's activity over the years. It can only be visible when the user has -->
+        <!-- clicked the 'Activity Data' button and clicked on a marker -->
+        <!-- Each image, when clicked, triggers the 'fullScreen()' function that displays that particular image in modal mode -->
+        <div class="container col-4" id="slides" style="display:none; margin-right: 0.25%; margin-top: 10%; float: right;">
+            <div class="mySlides" onclick="fullScreen()">
+              <img class="demo cursor" src="images/nust/June 2008.jpg" style="width:100%" alt="2008">
+            </div>
+            <div class="mySlides" onclick="fullScreen()">
+              <img class="demo cursor" src="images/nust/May 2011.jpg" style="width:100%" alt="2011">
+            </div>
+            <div class="mySlides" onclick="fullScreen()">
+              <img class="demo cursor" src="images/nust/June 2014.jpg" style="width:100%" alt="2014">
+            </div>
+            <div class="mySlides" onclick="fullScreen()">
+              <img class="demo cursor" src="images/nust/November 2017.jpg" style="width:100%" alt="2017">
+            </div>
+            <div class="mySlides" onclick="fullScreen()">
+              <img class="demo cursor" src="images/nust/July 2020.jpg" style="width:100%" alt="2020">
+            </div>
+            <!-- Anchors that display the next or previous slide in the slideshow -->
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            <!-- The div that contains the caption (year) of an image -->
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+        </div>
+
+        <!-- This is the 'graph' div that contains the graph/tabular data of the forestation data of a particular site -->
+        <!-- When clicked, the graph will also be displayed in modal mode -->
+        <div class="graphContainer col-4" id="graph" style="display:none; margin-right: 0.25%; margin-top: 10%; float: right;">
+          <div class="myGraph" onclick="fullScreen2()">
+            <img src="images/nustgraph.png" style="width:100%">
+          </div>
+        </div>
+        
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- The Close Button -->
+          <span class="close" onclick="closeModal()">&times;</span>
+          <!-- Modal Content (The Image) -->
+          <img class="modal-content" id="img01">
+          <!-- Modal Caption (Image Text) -->
+          <div id="modal-caption"></div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

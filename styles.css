@@ -1,0 +1,253 @@
+/* The default fonts of all text in the html file */
+*{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Styling of the title div */
+#green-one{
+  background-color: darkgreen;
+  float: left;
+  font-size: large;
+}
+
+/* Class for the logos when the window is in full screen */
+.image {
+  width: 100%;
+  overflow: hidden;
+  float: left;
+  height: 75px;
+  margin-top: 10px;
+  margin-left: 55px;
+}
+
+/* To prevent the formation of scroll bars */
+body {
+  overflow: hidden;
+}
+
+/* Styling of the buttons */
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 1px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  width: 100%;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+/* When the 'Activity Data' or 'Forestation Data' button is selected, it changes the colour of the button */
+.buttonActive{
+  background-color: #a1c71a;
+}
+
+/* The button's opacity decreases when the cursor hovers above it */
+button:hover{
+  opacity: 0.8;
+}
+
+/* Styling (placement) of the div that contains all the buttons */
+.buttonDiv{
+    float: left;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Styling of the map when the window is fullscreen */
+.mapContainer{
+  height: 87.18%;
+	position: absolute;
+	overflow: hidden;
+}
+
+/* Custom widths */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-2-5 {width: 20%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-11-9 {width: 99.25%;}
+.col-12 {width: 100%;}
+
+/* Contains classes that work when the window is not in fullscreen */
+@media only screen and (max-width: 1280px) {
+  /* Changes the styling of the map when window is not in fullscreen mode */
+  .mapSize {width: 99.1%; height: 84.33%; position: absolute; overflow: hidden;}
+  /* Changes the styling of the logos when window is not in fullscreen mode */
+  .imagesResize {width: 10%; overflow: hidden; float: left; height: 75px; margin-top: 10px; margin-left: 30px;}
+}
+
+/* Styling of the div that contains the slideshow */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Styling of the divs that contain the images */
+.mySlides {
+  display: none;
+}
+
+/* Cursor changes to pointer when hovering over a div that contains this class */
+.cursor {
+  cursor: pointer;
+}
+
+/* Styling of the next and previous anchors */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Positioning of only the 'next' anchor */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Styling of the 'next' and 'previous' anchors change when the cursor hovers above them */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Styling of the div that contains the caption */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+/* Styling of the div that contains the anchors to social media sites */
+.footer {
+  width: 100%;
+  background-color: black;
+  opacity: 0.75;
+  color: white;
+  text-align: center;
+  margin: 2px 1px;
+}
+
+/* Styling of the social media logos */
+.logos {
+  height: 48px;
+  width: auto;
+  margin-left: 6%;
+  margin-right: 6%;
+  transition: 0.5s;
+  opacity: 0.6;
+}
+
+/* Increases opacity of the logos when hovering over them */
+.logos:hover {
+  opacity: 1;
+}
+
+/* Decreases opacity of the slides when hovering over them */
+.mySlides:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* Decreases opacity of the graph when hovering over it */
+.myGraph:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#modal-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #modal-caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/* Styling of the div that contains the graph */
+.graphContainer {
+  position: relative;
+  display: none;
+}
