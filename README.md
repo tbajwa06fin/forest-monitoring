@@ -1,5 +1,5 @@
 # forest-monitoring
-A desktop app made with ElectronJS for a project commissioned by Serena Hotels. For more details, check README.docx.
+A desktop app made with ElectronJS for a project commissioned by Serena Hotels. For more details, check README.docx. This project was completed in August 2021.
 
 # Requirements
 You will need additional files to run this application, as well as a google maps API key. The additional files can be downloaded here:
